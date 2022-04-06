@@ -2,6 +2,19 @@ class Message(object):
     pass
 
 
+class EmptyMessage(Message):
+    title: str
+    template: str
+    elements: list
+    msg_type: str
+
+    def __init__(self, title: str, template: str, elements: list, msg_type: str):
+        self.title = title
+        self.template = template
+        self.elements = elements
+        self.msg_type = msg_type
+
+
 class TextMessage(Message):
     def __init__(self):
         self._title = ""
