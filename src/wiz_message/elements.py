@@ -7,17 +7,17 @@ class Hr(MessageElement):
 
 
 class Markdown(MessageElement):
-    content: str
+    text: str
 
-    def __init__(self, content: str):
-        self.content = content
+    def __init__(self, text: str):
+        self.text = text
 
 
 class Note(MessageElement):
-    content: str
+    text: str
 
-    def __init__(self, content: str):
-        self.content = content
+    def __init__(self, text: str):
+        self.text = text
 
 
 class MarkdownAt(MessageElement):
@@ -42,7 +42,7 @@ class DatePicker(MessageElement):
     confirm: Confirm
     placeholder: str
 
-    def __init__(self, picker_type: str, picker_id: str, confirm: Confirm, placeholder: str):
+    def __init__(self, placeholder: str, picker_type: str, picker_id: str, confirm: Confirm = None):
         self.picker_type = picker_type
         self.picker_id = picker_id
         self.confirm = confirm
@@ -64,7 +64,7 @@ class Button(MessageElement):
     button_id: str
     confirm: Confirm
 
-    def __init__(self, button_text: str, button_type: str, button_id: str, confirm: Confirm):
+    def __init__(self, button_text: str, button_type: str, button_id: str, confirm: Confirm = None):
         self.button_text = button_text
         self.button_type = button_type
         self.button_id = button_id
@@ -80,7 +80,7 @@ class TextAndButton(MessageElement):
         self.button = button
 
 
-class Option(object):
+class OptionItem(object):
     text: str
     value: str
 
@@ -96,7 +96,7 @@ class Options(MessageElement):
     options: list
     confirm: Confirm
 
-    def __init__(self, place_holder: str, option_id: str, option_type: str, options: list, confirm: Confirm):
+    def __init__(self, place_holder: str, option_type: str, option_id: str, options: list, confirm: Confirm = None):
         self.place_holder = place_holder
         self.option_id = option_id
         self.option_type = option_type

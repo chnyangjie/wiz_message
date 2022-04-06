@@ -2,13 +2,13 @@ class Message(object):
     pass
 
 
-class EmptyMessage(Message):
+class Robot(Message):
     title: str
     template: str
     elements: list
     msg_type: str
 
-    def __init__(self, title: str, template: str, elements: list, msg_type: str):
+    def __init__(self, title: str, template: str = None, elements: list = [], msg_type: str = None):
         self.title = title
         self.template = template
         self.elements = elements
