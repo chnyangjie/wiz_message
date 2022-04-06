@@ -14,6 +14,9 @@ class EmptyMessage(Message):
         self.elements = elements
         self.msg_type = msg_type
 
+    def add_element(self, element):
+        self.elements.append(element)
+
 
 class TextMessage(Message):
     def __init__(self):
