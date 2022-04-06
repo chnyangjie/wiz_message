@@ -36,6 +36,28 @@ class Confirm(MessageElement):
         self.content = content
 
 
+class DatePicker(MessageElement):
+    picker_type: str
+    picker_id: str
+    confirm: Confirm
+    placeholder: str
+
+    def __init__(self, picker_type: str, picker_id: str, confirm: Confirm, placeholder: str):
+        self.picker_type = picker_type
+        self.picker_id = picker_id
+        self.confirm = confirm
+        self.placeholder = placeholder
+
+
+class TextAndDatePicker(MessageElement):
+    text: str
+    date_picker: DatePicker
+
+    def __init__(self, text: str, date_picker: DatePicker):
+        self.text = text
+        self.date_picker = date_picker
+
+
 class Button(MessageElement):
     button_text: str
     button_type: str
