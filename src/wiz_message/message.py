@@ -8,7 +8,9 @@ class Robot(Message):
     elements: list
     msg_type: str
 
-    def __init__(self, title: str, template: str = None, elements: list = [], msg_type: str = None):
+    def __init__(self, title: str, template: str = None, elements=None, msg_type: str = None):
+        if elements is None:
+            elements = []
         self.title = title
         self.template = template
         self.elements = elements
